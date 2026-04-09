@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sprechzimmer Osterstedt</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0b0b;
+  --bg-soft:#121212;
+  --card:#171717;
+  --gold:#c89b6a;
+  --gold-dark:#a67c52;
+  --text:#f5f5f5;
+  --muted:#d8d0c7;
+  --line:rgba(255,255,255,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Poppins,sans-serif;background:var(--bg);color:var(--text)}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+
+.navbar{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 36px;background:rgba(0,0,0,.58);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.logo{font-family:'Playfair Display',serif;font-size:28px;color:var(--gold);letter-spacing:.04em}
+.navbar ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+.navbar a{font-size:15px;color:#fff;opacity:.92;transition:.25s}
+.navbar a:hover{color:var(--gold)}
+
+.hero{
+  min-height:100vh;
+  background:
+   linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.68)),
+   radial-gradient(circle at top, rgba(200,155,106,.18), transparent 35%),
+   url('https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  display:flex;align-items:center;justify-content:center;padding:120px 24px 70px
+}
+.overlay{max-width:980px;text-align:center;padding:44px 36px;background:rgba(10,10,10,.42);border:1px solid rgba(255,255,255,.08);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.overlay .eyebrow{letter-spacing:.3em;text-transform:uppercase;color:var(--muted);font-size:13px;margin-bottom:16px}
+.overlay h1{font-family:'Playfair Display',serif;font-size:78px;line-height:1.02;margin:0;color:var(--gold)}
+.overlay p{font-size:19px;max-width:720px;margin:18px auto 0;color:#f0ebe4}
+.buttons{margin-top:28px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 26px;background:var(--gold);color:#111;font-weight:600;transition:.25s;border:1px solid var(--gold)}
+.btn:hover{background:var(--gold-dark);border-color:var(--gold-dark)}
+.btn-outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.18)}
+.btn-outline:hover{background:rgba(255,255,255,.08);color:var(--gold)}
+
+main{padding:0 0 40px}
+.page{padding:88px 22px;scroll-margin-top:86px}
+.container{max-width:1180px;margin:0 auto}
+.section-head{text-align:center;max-width:760px;margin:0 auto 42px}
+.section-head .mini{color:var(--gold);text-transform:uppercase;letter-spacing:.24em;font-size:12px;margin-bottom:10px}
+.section-head h2{font-family:'Playfair Display',serif;font-size:46px;margin:0 0 10px}
+.section-head p{margin:0;color:var(--muted);line-height:1.7}
+
+.welcome-grid,.contact-grid,.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center}
+.card{background:var(--card);border:1px solid var(--line);padding:28px}
+.card h3{font-family:'Playfair Display',serif;font-size:30px;margin:0 0 14px;color:var(--gold)}
+.card p{margin:0;color:var(--muted);line-height:1.8}
+.photo-box{min-height:420px;background:linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.35)),url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1400&q=80') center/cover;border:1px solid var(--line)}
+
+.menu-grid,.hours-grid,.gallery-grid,.team-grid{display:grid;gap:22px}
+.menu-grid{grid-template-columns:repeat(3,1fr)}
+.hours-grid{grid-template-columns:repeat(2,1fr)}
+.gallery-grid{grid-template-columns:repeat(3,1fr)}
+.team-grid{grid-template-columns:repeat(3,1fr)}
+.menu-card,.hours-card,.gallery-card,.team-card{background:var(--card);border:1px solid var(--line);overflow:hidden}
+.menu-card .content,.hours-card .content,.team-card .content{padding:22px}
+.menu-card h3,.hours-card h3,.team-card h3{font-family:'Playfair Display',serif;color:var(--gold);margin:0 0 10px;font-size:28px}
+.menu-card p,.hours-card p,.team-card p{margin:0;color:var(--muted);line-height:1.7}
+.hours-list{display:grid;gap:10px;margin-top:8px}
+.hours-list div{display:flex;justify-content:space-between;gap:18px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.hours-list div:last-child{border-bottom:none}
+.gallery-card img,.team-card img{width:100%;height:280px;object-fit:cover}
+.gallery-card .label{padding:14px 18px;color:var(--muted)}
+.role{color:var(--gold);font-size:14px;text-transform:uppercase;letter-spacing:.14em;margin-bottom:8px}
+
+.contact-list{display:grid;gap:14px;margin-top:10px}
+.contact-line{padding:14px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);color:var(--muted)}
+.impressum-box{max-width:900px;margin:0 auto;background:var(--card);border:1px solid var(--line);padding:32px}
+.impressum-box h3{font-family:'Playfair Display',serif;color:var(--gold);font-size:30px;margin:0 0 16px}
+.impressum-box p{color:var(--muted);line-height:1.8;margin:0 0 14px}
+
+.footer{text-align:center;padding:34px 20px;background:#111;border-top:1px solid var(--line);color:var(--muted)}
+.footer strong{color:var(--gold);font-weight:600}
+
+@media (max-width: 980px){
+  .menu-grid,.gallery-grid,.team-grid,.hours-grid,.welcome-grid,.contact-grid,.about-grid{grid-template-columns:1fr}
+  .overlay h1{font-size:56px}
+}
+@media (max-width: 720px){
+  .navbar{padding:16px 18px;display:block}
+  .logo{margin-bottom:12px}
+  .navbar ul{gap:14px}
+  .overlay{padding:32px 20px}
+  .overlay h1{font-size:42px}
+  .overlay p{font-size:16px}
+  .page{padding:72px 16px}
+  .section-head h2{font-size:34px}
+}
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo">Sprechzimmer</div>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#speisekarte">Speisekarte</a></li>
+    <li><a href="#oeffnungszeiten">Öffnungszeiten</a></li>
+    <li><a href="#galerie">Galerie</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+    <li><a href="#impressum">Impressum</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="home">
+  <div class="overlay">
+    <div class="eyebrow">Treffpunkt Ole School · Osterstedt</div>
+    <h1>Sprechzimmer</h1>
+    <p>Einfach gutes Essen. Ohne viel Schnickschnack. Ehrlich, warm, einladend und genau so aufgebaut, wie du es für die Kneipe haben wolltest.</p>
+    <div class="buttons">
+      <a href="#speisekarte" class="btn">Speisekarte</a>
+      <a href="#kontakt" class="btn btn-outline">Kontakt</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page" id="willkommen">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini">Willkommen</div>
+        <h2>Moderne Kneipen-Website im warmen Premium-Look</h2>
+        <p>Keine Baukasten-Optik, keine sterile Gastro-Seite. Sondern dunkel, hochwertig und mit genau dem gemütlichen Charakter, den du für das Sprechzimmer wolltest.</p>
+      </div>
+      <div class="welcome-grid">
+        <div class="card">
+          <h3>Ehrlich. Gemütlich. Gesellig.</h3>
+          <p>Das Sprechzimmer in Osterstedt ist der Treffpunkt für ehrliche Küche, gute Gespräche und entspannte Abende. Die Seite ist als Premium-Onepager im Canvas gebaut, damit du hier direkt alles anklicken und ansehen kannst, statt nur eine nackte Startseite zu haben.</p>
+        </div>
+        <div class="photo-box"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" id="speisekarte">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini">Speisekarte</div>
+        <h2>Frisch. Regional. Echt.</h2>
+        <p>Hier ist eine Premium-Darstellung der Speisekarte als Kartenlayout. Die Texte sind Platzhalter-Basis und können danach mit deinen echten Angeboten ersetzt werden.</p>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80" alt="Hausmannskost">
+          <div class="content">
+            <h3>Hausmannskost</h3>
+            <p>Kräftige Küche, ehrliche Teller und warmes Essen ohne unnötigen Firlefanz.</p>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1528605105345-5344ea20e269?auto=format&fit=crop&w=1200&q=80" alt="Frühstück und Brunch">
+          <div class="content">
+            <h3>Frühstück & Brunch</h3>
+            <p>Belegte Platten, warme Komponenten und ein Aufbau, der sofort Appetit macht.</p>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1200&q=80" alt="Buffet und Gesellschaften">
+          <div class="content">
+            <h3>Buffet & Gesellschaften</h3>
+            <p>Kalte Buffets, Feiern und Gruppenangebote für gesellige Runden im passenden Rahmen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" id="oeffnungszeiten">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini">Öffnungszeiten</div>
+        <h2>Klar, groß und direkt lesbar</h2>
+        <p>Die Zeiten sind direkt sichtbar und nicht irgendwo versteckt. Genau so muss das für eine Gastro-Seite sein.</p>
+      </div>
+      <div class="hours-grid">
+        <div class="hours-card">
+          <div class="content">
+            <h3>Regelbetrieb</h3>
+            <div class="hours-list">
+              <div><span>Montag</span><span>Ruhetag</span></div>
+              <div><span>Dienstag</span><span>Ruhetag</span></div>
+              <div><span>Mittwoch Mittag</span><span>12:00 – 13:30</span></div>
+              <div><span>Mittwoch Abend</span><span>17:30 – 21:00</span></div>
+              <div><span>Donnerstag</span><span>17:30 – 21:00</span></div>
+              <div><span>Freitag</span><span>17:30 – 21:00</span></div>
+              <div><span>Samstag</span><span>11:30 – 13:00</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="hours-card">
+          <div class="content">
+            <h3>Zusätzliche Hinweise</h3>
+            <p>Samstags nur mit Vorbestellung. Abends für Gesellschaften geöffnet. Mittwochs ist zusätzlich Mittagstisch-Lieferung möglich. Diese Box kann später noch mit echten Zusatzinfos oder Events ergänzt werden.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" id="galerie">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini">Galerie</div>
+        <h2>Bilder, Atmosphäre und Eindruck</h2>
+        <p>Im Canvas habe ich die Galerie als klickbaren Bereich mit mehreren Bildkarten aufgebaut. Später können hier deine echten Fotos direkt rein.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-card"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80" alt="Galerie Bild 1"><div class="label">Außenansicht & Stimmung</div></div>
+        <div class="gallery-card"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=80" alt="Galerie Bild 2"><div class="label">Buffet & Anrichte</div></div>
+        <div class="gallery-card"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80" alt="Galerie Bild 3"><div class="label">Innenraum & Atmosphäre</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" id="team">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini">Team</div>
+        <h2>Persönlich statt anonym</h2>
+        <p>Der Team-Bereich ist jetzt direkt eingebaut und anklickbar. Die Namen entsprechen den Infos aus dem Chat.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80" alt="Claudia Sievers">
+          <div class="content"><div class="role">Inhaberin</div><h3>Claudia Sievers</h3><p>Gesicht und Herz des Sprechzimmers.</p></div>
+        </div>
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=900&q=80" alt="Eylina Blank">
+          <div class="content"><div class="role">Team</div><h3>Eylina Blank</h3><p>Teil des Teams und mit auf der Seite sichtbar.</p></div>
+        </div>
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=900&q=80" alt="Hanna Blank">
+          <div class="content"><div class="role">Team</div><h3>Hanna Blank</h3><p>Gehört ebenfalls mit auf die Website.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" id="kontakt">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini">Kontakt</div>
+        <h2>Alles direkt griffbereit</h2>
+        <p>Adresse, Telefon und Mail sind jetzt sauber eingebunden, damit Besucher direkt wissen, wohin und wie sie euch erreichen.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Sprechzimmer Osterstedt</h3>
+          <div class="contact-list">
+            <div class="contact-line">Hauptstraße 34, 25590 Osterstedt</div>
+            <div class="contact-line">Telefon: 04874 / 901879</div>
+            <div class="contact-line">E-Mail: imsprechzimmer@outlook.de</div>
+            <div class="contact-line">Gesellschaften, Gastwirtschaftsbetrieb, Buffets und Brunchangebote</div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Reservierung & Anfrage</h3>
+          <p>Hier kann später ein Formular, ein WhatsApp-Button oder eine Google-Maps-Einbindung rein. Im Canvas ist es jetzt erstmal als vollwertiger Kontaktbereich integriert.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" id="impressum">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini">Impressum</div>
+        <h2>Pflichtangaben sauber eingebaut</h2>
+      </div>
+      <div class="impressum-box">
+        <h3>Impressum</h3>
+        <p><strong>Angaben gemäß § 5 TMG</strong></p>
+        <p>Claudia Sievers<br>Hauptstraße 34<br>25590 Osterstedt</p>
+        <p><strong>Kontakt</strong><br>Telefon: 04874 / 901879<br>E-Mail: imsprechzimmer@outlook.de</p>
+        <p><strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</strong><br>Claudia Sievers</p>
+        <p><strong>Leistungen / Angebot</strong><br>Catering, kalte Buffets, Frühstücks- und Brunchangebote, Gesellschaften sowie Gastwirtschaftsbetrieb</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p><strong>Sprechzimmer</strong> · Claudia Sievers · Hauptstraße 34 · 25590 Osterstedt</p>
+  <p>Telefon: 04874 / 901879 · E-Mail: imsprechzimmer@outlook.de</p>
+</footer>
+</body>
+</html>
