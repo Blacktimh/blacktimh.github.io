@@ -1,6 +1,0 @@
-body{margin:0;background:#0b0b0b;color:white;font-family:Arial}
-.navbar{display:flex;justify-content:space-between;padding:20px;background:#111}
-.hero{height:100vh;background:url('images/1.jpg') center/cover}
-.overlay{text-align:center;padding-top:200px}
-.btn{background:#c89b6a;padding:10px;color:black;text-decoration:none}
-.section{padding:40px;text-align:center}
