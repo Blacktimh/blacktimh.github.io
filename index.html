@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Im Sprechzimmer Osterstedt</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- COOKIE BANNER – DSGVO / TTDSG konform -->
+<div id="cookie-banner" style="display:none" role="dialog" aria-label="Cookie-Einstellungen">
+  <p>
+    Diese Website verwendet technisch notwendige Cookies. Für die Einbindung von Google Maps werden bei Ihrer Zustimmung Daten an Google LLC (USA) übertragen. Mehr dazu in unserer
+    <a href="datenschutz.html">Datenschutzerklärung</a>.
+  </p>
+  <div class="cookie-btns">
+    <button class="cookie-btn-reject" onclick="setCookieConsent('rejected')">Ablehnen</button>
+    <button class="cookie-btn-accept" onclick="setCookieConsent('accepted')">Akzeptieren</button>
+  </div>
+</div>
+
+<nav class="navbar">
+  <div class="logo">
+    <img src="images/logo-horizontal.png" alt="Im Sprechzimmer Logo">
+    Im Sprechzimmer
+  </div>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#speisekarte">Speisekarte</a></li>
+    <li><a href="#oeffnungszeiten">Öffnungszeiten</a></li>
+    <li><a href="#galerie">Galerie</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+    <li><a href="impressum.html">Impressum</a></li>
+    <li><a href="datenschutz.html">Datenschutz</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="home">
+  <div class="overlay">
+    <img src="images/logo-rund.png" alt="Im Sprechzimmer – Treffpunkt Ole School" class="hero-logo">
+    <div class="eyebrow">Treffpunkt Ole School · Osterstedt</div>
+    <h1>Im Sprechzimmer</h1>
+    <p>Einfach gutes Essen im Herzen Osterstedts. Ohne viel Schnickschnack.</p>
+    <div class="buttons">
+      <a href="#speisekarte" class="btn">Speisekarte</a>
+      <a href="#kontakt" class="btn btn-outline">Kontakt</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- WILLKOMMEN -->
+  <section class="page" id="willkommen">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini">Willkommen</div>
+        <h2>Ehrlich. Gemütlich. Gesellig.</h2>
+        <p>Das Sprechzimmer in Osterstedt ist der Treffpunkt für ehrliche Küche, gute Gespräche und entspannte Abende. Komm vorbei und fühl dich wie zuhause.</p>
+      </div>
+      <div class="welcome-grid">
+        <div class="card">
+          <h3>Ehrlich. Gemütlich. Gesellig.</h3>
+          <p>Das Sprechzimmer in Osterstedt ist der Treffpunkt für ehrliche Küche, gute Gespräche und entspannte Abende.</p>
+        </div>
+        <div class="photo-box"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEISEKARTE -->
+  <section class="page" id="speisekarte">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini">Speisekarte</div>
+        <h2>Frisch. Regional. Echt.</h2>
+        <p>Hausmannskost, Frühstück &amp; Brunch sowie Buffets für Gesellschaften – bei uns ist für jeden etwas dabei.</p>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-card">
+          <img src="images/food-1.jpg" alt="Hausmannskost – Wildwurst vom Rehwild">
+          <div class="content">
+            <h3>Hausmannskost</h3>
+            <p>Kräftige Küche, ehrliche Teller und warmes Essen ohne unnötigen Firlefanz.</p>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="images/food-2.jpg" alt="Frühstück und Brunch – Frisch geräucherter Fisch">
+          <div class="content">
+            <h3>Frühstück &amp; Brunch</h3>
+            <p>Belegte Platten, warme Komponenten und ein Aufbau, der sofort Appetit macht.</p>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="images/food-3.jpg" alt="Buffet und Gesellschaften – Aufschnittplatte">
+          <div class="content">
+            <h3>Buffet &amp; Gesellschaften</h3>
+            <p>Kalte Buffets, Feiern und Gruppenangebote für gesellige Runden im passenden Rahmen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÖFFNUNGSZEITEN -->
+  <section class="page" id="oeffnungszeiten">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini">Öffnungszeiten</div>
+        <h2>Wann wir für euch da sind</h2>
+        <p>Schaut einfach vorbei – wir freuen uns auf euch!</p>
+      </div>
+      <div class="hours-grid">
+        <div class="hours-card">
+          <div class="content">
+            <h3>Regelbetrieb</h3>
+            <div class="hours-list">
+              <div><span>Montag</span><span>Ruhetag</span></div>
+              <div><span>Dienstag</span><span>Ruhetag</span></div>
+              <div><span>Mittwoch Mittag</span><span>12:00 – 13:30</span></div>
+              <div><span>Mittwoch Abend</span><span>17:30 – 21:00</span></div>
+              <div><span>Donnerstag</span><span>17:30 – 21:00</span></div>
+              <div><span>Freitag</span><span>17:30 – 21:00</span></div>
+              <div><span>Samstag</span><span>11:30 – 13:00</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="hours-card">
+          <div class="content">
+            <h3>Zusätzliche Hinweise</h3>
+            <p>Samstags nur mit Vorbestellung. Abends für Gesellschaften geöffnet. Mittwochs ist zusätzlich Mittagstisch-Lieferung möglich.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIE MIT SLIDER -->
+  <section class="page" id="galerie">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini">Galerie</div>
+        <h2>Bilder, Atmosphäre und Eindruck</h2>
+        <p>Ein Blick hinter die Kulissen – von unserem Buffet bis zum gedeckten Tisch.</p>
+      </div>
+      <div class="slider-wrap" id="slider">
+        <div class="slider-track" id="sliderTrack">
+          <div class="slide"><img src="images/gallery-1.jpg" alt="Das große Buffet" loading="lazy"><div class="slide-label">Das große Buffet</div></div>
+          <div class="slide"><img src="images/gallery-2.jpg" alt="Buffet und Anrichte" loading="lazy"><div class="slide-label">Buffet &amp; Anrichte</div></div>
+          <div class="slide"><img src="images/food-1.jpg" alt="Wildwurst vom Rehwild" loading="lazy"><div class="slide-label">Wildwurst vom Rehwild</div></div>
+          <div class="slide"><img src="images/food-2.jpg" alt="Frisch geräucherter Fisch" loading="lazy"><div class="slide-label">Frisch geräucherter Fisch</div></div>
+          <div class="slide"><img src="images/food-3.jpg" alt="Aufschnitt-Platte" loading="lazy"><div class="slide-label">Aufschnitt-Platte</div></div>
+          <div class="slide"><img src="images/food-4.jpg" alt="Lachs und Shrimps" loading="lazy"><div class="slide-label">Lachs &amp; Shrimps</div></div>
+          <div class="slide"><img src="images/food-cheese.jpg" alt="Käse-Auswahl" loading="lazy"><div class="slide-label">Käse-Auswahl</div></div>
+          <div class="slide"><img src="images/food-eggs.jpg" alt="Gefüllte Eier" loading="lazy"><div class="slide-label">Gefüllte Eier</div></div>
+          <div class="slide"><img src="images/food-spargel.jpg" alt="Spargel-Schinken-Röllchen" loading="lazy"><div class="slide-label">Spargel-Schinken-Röllchen</div></div>
+          <div class="slide"><img src="images/food-vegan.jpg" alt="Vegane Platte" loading="lazy"><div class="slide-label">Vegane Platte</div></div>
+        </div>
+        <button class="slider-btn slider-prev" onclick="slideMove(-1)">&#8592;</button>
+        <button class="slider-btn slider-next" onclick="slideMove(1)">&#8594;</button>
+      </div>
+      <div class="slider-dots" id="sliderDots"></div>
+    </div>
+  </section>
+
+  <!-- TEAM – Gruppenfotos mit Bildunterschriften -->
+  <section class="page" id="team">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini">Team</div>
+        <h2>Die Mädels hinter dem Sprechzimmer</h2>
+        <p>Ohne die drei läuft hier gar nichts – immer mit guter Laune und einem Spaß zu haben.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="images/team-foto1.jpg" alt="Claudia, Eylina und Hanna im Oktoberfest-Outfit">
+          <div class="content">
+            <p class="caption">„Unsere drei Mädels im Oktoberfest-Outfit – prost!"</p>
+            <p class="members">Claudia · Eylina · Hanna</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="images/team-foto2.jpg" alt="Eylina, Claudia und Hanna im Arbeitsoutfit">
+          <div class="content">
+            <p class="caption">„Unsere Mädels im Arbeitsoutfit – bereit für den nächsten Abend."</p>
+            <p class="members">Eylina · Claudia · Hanna</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="images/team-eylina-solo.jpg" alt="Eylina hat wieder ihre fünf Minuten">
+          <div class="content">
+            <p class="caption">„Wenn Eylina mal wieder ihre fünf Minuten hat..."</p>
+            <p class="members">Eylina</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section class="page" id="kontakt">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini">Kontakt</div>
+        <h2>So findet ihr uns</h2>
+        <p>Adresse, Telefon und E-Mail – alles direkt griffbereit. Und auf der Karte seht ihr genau wo wir sind.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Sprechzimmer Osterstedt</h3>
+          <div class="contact-list">
+            <div class="contact-line">📍 Hauptstraße 34, 25590 Osterstedt</div>
+            <div class="contact-line">📞 Telefon: 04874 / 901879</div>
+            <div class="contact-line">✉️ E-Mail: imsprechzimmer@outlook.de</div>
+            <div class="contact-line">Gesellschaften, Gastwirtschaftsbetrieb, Buffets und Brunchangebote</div>
+          </div>
+          <!-- GOOGLE MAPS – DSGVO-konform: lädt erst nach Einwilligung -->
+          <div id="maps-placeholder" class="maps-placeholder">
+            <p>
+              Hier wird Google Maps eingebettet.<br>
+              <strong style="color:var(--text)">Mit dem Laden der Karte akzeptieren Sie die Datenübertragung an Google LLC (USA).</strong><br>
+              Dabei wird u.&nbsp;a. Ihre IP-Adresse an Google übermittelt. Mehr Infos in unserer <a href="datenschutz.html" style="color:var(--gold)">Datenschutzerklärung</a>.
+            </p>
+            <button class="maps-load-btn" onclick="loadGoogleMap()">Karte laden</button>
+            <p style="font-size:12px;color:rgba(255,255,255,.4);margin-top:10px">Google LLC · 1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA</p>
+          </div>
+          <div class="maps-box" id="maps-box" style="display:none">
+            <iframe id="maps-iframe" src="" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Reservierung &amp; Anfrage</h3>
+          <p style="margin-bottom:20px;">Für Reservierungen und Anfragen könnt ihr uns gerne anrufen oder eine E-Mail schicken. Wir freuen uns auf euch!</p>
+          <a href="tel:04874901879" class="btn" style="display:block;text-align:center;margin-bottom:12px;">📞 Jetzt anrufen</a>
+          <a href="mailto:imsprechzimmer@outlook.de" class="btn btn-outline" style="display:block;text-align:center;">✉️ E-Mail schreiben</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <img src="images/logo-rund.png" alt="Im Sprechzimmer" class="footer-logo">
+  <p><strong>Sprechzimmer</strong> · Claudia Sievers · Hauptstraße 34 · 25590 Osterstedt</p>
+  <p>Telefon: 04874 / 901879 · E-Mail: imsprechzimmer@outlook.de</p>
+  <p style="margin-top:10px">
+    <a href="impressum.html">Impressum</a> &nbsp;·&nbsp;
+    <a href="datenschutz.html">Datenschutzerklärung</a>
+  </p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+const SLIDE_COUNT = document.querySelectorAll('.slide').length;
+let current = 0;
+const track = document.getElementById('sliderTrack');
+const dotsEl = document.getElementById('sliderDots');
+
+for(let i=0;i<SLIDE_COUNT;i++){
+  const dot = document.createElement('div');
+  dot.className = 'dot' + (i===0?' active':'');
+  dot.onclick = (function(n){return function(){goTo(n)}})(i);
+  dotsEl.appendChild(dot);
+}
+
+function goTo(n){
+  current = (n + SLIDE_COUNT) % SLIDE_COUNT;
+  track.style.transform = 'translateX(-'+(current*100)+'%)';
+  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===current));
+}
+function slideMove(dir){ goTo(current+dir); }
+setInterval(()=>slideMove(1), 5000);
+
+let tx=0;
+const sliderEl=document.getElementById('slider');
+sliderEl.addEventListener('touchstart',e=>tx=e.touches[0].clientX,{passive:true});
+sliderEl.addEventListener('touchend',e=>{const dx=tx-e.changedTouches[0].clientX;if(Math.abs(dx)>40)slideMove(dx>0?1:-1);});
+</script>
+</body>
+</html>
