@@ -97,12 +97,39 @@ main{padding:0 0 40px}
 @media (max-width: 720px){
   .navbar{padding:16px 18px;display:block}
   .logo{margin-bottom:12px}
-  .navbar ul{gap:14px}
+  .navbar ul{
+    gap:14px;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    padding-bottom:4px;
+    scrollbar-width:none;
+  }
+  .navbar ul::-webkit-scrollbar{display:none}
+  .navbar a{
+    display:inline-flex;
+    align-items:center;
+    min-height:44px;
+    white-space:nowrap;
+  }
+  .hero{min-height:92svh;padding:128px 14px 56px}
   .overlay{padding:32px 20px}
   .overlay h1{font-size:42px}
-  .overlay p{font-size:16px}
+  .overlay p{font-size:16px;line-height:1.6}
+  .buttons{gap:10px}
+  .btn{width:100%;max-width:320px;text-align:center}
   .page{padding:72px 16px}
   .section-head h2{font-size:34px}
+  .section-head p{font-size:15px}
+  .photo-box{min-height:300px}
+  .gallery-card img,.team-card img{height:230px}
+}
+@media (max-width: 420px){
+  .logo{font-size:24px}
+  .overlay h1{font-size:36px}
+  .section-head h2{font-size:30px}
+  .card,.menu-card .content,.hours-card .content,.team-card .content,.impressum-box{padding:20px}
+  .hours-list div{flex-direction:column;align-items:flex-start;gap:4px}
 }
 </style>
 </head>
